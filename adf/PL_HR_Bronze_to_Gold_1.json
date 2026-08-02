@@ -1,0 +1,84 @@
+{
+    "name": "PL_HR_Bronze_to_Gold",
+    "properties": {
+        "activities": [
+            {
+                "name": "Run_Bronze_Ingestion",
+                "type": "DatabricksNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "notebookPath": "/Users/<your-databricks-username>/01_HR_Bronze_Ingestion"
+                },
+                "linkedServiceName": {
+                    "referenceName": "LS_AnandDatabricks",
+                    "type": "LinkedServiceReference"
+                }
+            },
+            {
+                "name": "Run_Silver_Transformation",
+                "type": "DatabricksNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "Run_Bronze_Ingestion",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "notebookPath": "/Users/<your-databricks-username>/02_HR_Silver_Transformation"
+                },
+                "linkedServiceName": {
+                    "referenceName": "LS_AnandDatabricks",
+                    "type": "LinkedServiceReference"
+                }
+            },
+            {
+                "name": "Run_Gold_Aggregation",
+                "type": "DatabricksNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "Run_Silver_Transformation",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "notebookPath": "/Users/<your-databricks-username>/03_HR_Gold_Aggregation"
+                },
+                "linkedServiceName": {
+                    "referenceName": "LS_AnandDatabricks",
+                    "type": "LinkedServiceReference"
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2026-08-01T11:02:43Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
