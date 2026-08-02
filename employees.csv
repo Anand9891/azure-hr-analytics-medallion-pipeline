@@ -1,0 +1,26 @@
+employee_id,employee_name,department_id,designation,salary,joining_date,manager_id
+1,Rahul,1,Software Engineer,85000,2020-05-16,
+2,Priya,2,HR Executive,52000,2022-10-17,
+3,Amit,5,Senior Software Engineer,110000,2019-03-07,
+4,Sneha,1,Senior Software Engineer,75000,2020-04-21,1
+5,Vikram,5,Software Engineer,75000,2023-01-06,3
+6,Anjali,5,Team Lead,75000,2021-07-08,3
+7,Karthik,5,Financial Analyst,45000,2023-04-04,3
+8,Divya,2,Team Lead,95000,2020-07-23,2
+9,Suresh,2,Sales Executive,95000,2019-07-29,2
+10,Meera,1,Team Lead,52000,2021-01-05,1
+11,Arjun,3,Financial Analyst,45000,2023-02-03,
+12,Pooja,4,Senior Software Engineer,110000,2019-06-11,
+13,Rajesh,5,Financial Analyst,95000,2022-03-28,3
+14,Kavya,2,Senior Software Engineer,45000,2022-09-16,2
+15,Manoj,2,Financial Analyst,52000,2023-10-18,2
+16,Neha,2,Senior Software Engineer,110000,2020-07-23,2
+17,Sanjay,4,Marketing Executive,60000,2021-01-28,12
+18,Ritu,3,Sales Executive,85000,2022-12-08,11
+19,Deepak,1,HR Executive,75000,2019-12-01,1
+20,Swati,4,Team Lead,85000,2024-03-10,12
+21,Vivek,5,Sales Executive,95000,2023-09-23,3
+22,Anita,1,Sales Executive,45000,2023-07-07,1
+23,Rohan,3,Team Lead,85000,2019-05-16,11
+24,Shreya,2,Marketing Executive,75000,2022-09-04,2
+25,Kiran,4,Team Lead,130000,2019-10-20,12
